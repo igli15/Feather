@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Feather"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/igli/Desktop/Feather Repo/Feather/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/igli/Desktop/Feather\ Repo/Feather/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/igli/Desktop/Feather\ Repo/Feather/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/igli/Desktop/Feather\ Repo/Feather/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/igli/Desktop/Feather\ Repo/Feather/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/igli/Desktop/Feather Repo/Feather/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/igli/Desktop/Feather\ Repo/Feather/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/igli/Desktop/Feather\ Repo/Feather/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/igli/Desktop/Feather\ Repo/Feather/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/igli/Desktop/Feather\ Repo/Feather/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/igli/Desktop/Feather Repo/Feather/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/igli/Desktop/Feather\ Repo/Feather/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/igli/Desktop/Feather\ Repo/Feather/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/igli/Desktop/Feather\ Repo/Feather/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/igli/Desktop/Feather\ Repo/Feather/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Feather">
+				<Option output="/Users/igli/Desktop/Feather Repo/Feather/cmake-build-debug/Feather" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/igli/Desktop/Feather Repo/Feather/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/igli/Desktop/Feather Repo/Feather/EventQueue"/>
+					<Add directory="/Users/igli/Desktop/Feather Repo/Feather/Events"/>
+					<Add directory="/Users/igli/Desktop/Feather Repo/Feather/Feather"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/igli/Desktop/Feather\ Repo/Feather/cmake-build-debug/Makefile&quot;  VERBOSE=1 Feather"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/igli/Desktop/Feather\ Repo/Feather/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/igli/Desktop/Feather\ Repo/Feather/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/igli/Desktop/Feather\ Repo/Feather/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Feather/fast">
+				<Option output="/Users/igli/Desktop/Feather Repo/Feather/cmake-build-debug/Feather" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/igli/Desktop/Feather Repo/Feather/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/igli/Desktop/Feather Repo/Feather/EventQueue"/>
+					<Add directory="/Users/igli/Desktop/Feather Repo/Feather/Events"/>
+					<Add directory="/Users/igli/Desktop/Feather Repo/Feather/Feather"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/igli/Desktop/Feather\ Repo/Feather/cmake-build-debug/Makefile&quot;  VERBOSE=1 Feather/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/igli/Desktop/Feather\ Repo/Feather/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/igli/Desktop/Feather\ Repo/Feather/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/igli/Desktop/Feather\ Repo/Feather/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/igli/Desktop/Feather Repo/Feather/EventQueue/Event.h">
+			<Option target="Feather"/>
+		</Unit>
+		<Unit filename="/Users/igli/Desktop/Feather Repo/Feather/EventQueue/EventQueue.cpp">
+			<Option target="Feather"/>
+		</Unit>
+		<Unit filename="/Users/igli/Desktop/Feather Repo/Feather/EventQueue/EventQueue.h">
+			<Option target="Feather"/>
+		</Unit>
+		<Unit filename="/Users/igli/Desktop/Feather Repo/Feather/EventQueue/MemberFunctionHandler.cpp">
+			<Option target="Feather"/>
+		</Unit>
+		<Unit filename="/Users/igli/Desktop/Feather Repo/Feather/EventQueue/MemberFunctionHandler.h">
+			<Option target="Feather"/>
+		</Unit>
+		<Unit filename="/Users/igli/Desktop/Feather Repo/Feather/Events/ComponentAddedEvent.cpp">
+			<Option target="Feather"/>
+		</Unit>
+		<Unit filename="/Users/igli/Desktop/Feather Repo/Feather/Events/ComponentAddedEvent.h">
+			<Option target="Feather"/>
+		</Unit>
+		<Unit filename="/Users/igli/Desktop/Feather Repo/Feather/Events/ComponentRemovedEvent.h">
+			<Option target="Feather"/>
+		</Unit>
+		<Unit filename="/Users/igli/Desktop/Feather Repo/Feather/Events/EntityEvents.h">
+			<Option target="Feather"/>
+		</Unit>
+		<Unit filename="/Users/igli/Desktop/Feather Repo/Feather/Feather/Benchmark.h">
+			<Option target="Feather"/>
+		</Unit>
+		<Unit filename="/Users/igli/Desktop/Feather Repo/Feather/Feather/ComponentRegistry.cpp">
+			<Option target="Feather"/>
+		</Unit>
+		<Unit filename="/Users/igli/Desktop/Feather Repo/Feather/Feather/ComponentRegistry.h">
+			<Option target="Feather"/>
+		</Unit>
+		<Unit filename="/Users/igli/Desktop/Feather Repo/Feather/Feather/ComponentSparseSet.cpp">
+			<Option target="Feather"/>
+		</Unit>
+		<Unit filename="/Users/igli/Desktop/Feather Repo/Feather/Feather/ComponentSparseSet.h">
+			<Option target="Feather"/>
+		</Unit>
+		<Unit filename="/Users/igli/Desktop/Feather Repo/Feather/Feather/CustomTypeID.h">
+			<Option target="Feather"/>
+		</Unit>
+		<Unit filename="/Users/igli/Desktop/Feather Repo/Feather/Feather/EntityHandle.cpp">
+			<Option target="Feather"/>
+		</Unit>
+		<Unit filename="/Users/igli/Desktop/Feather Repo/Feather/Feather/EntityHandle.h">
+			<Option target="Feather"/>
+		</Unit>
+		<Unit filename="/Users/igli/Desktop/Feather Repo/Feather/Feather/EntityRegistry.cpp">
+			<Option target="Feather"/>
+		</Unit>
+		<Unit filename="/Users/igli/Desktop/Feather Repo/Feather/Feather/EntityRegistry.h">
+			<Option target="Feather"/>
+		</Unit>
+		<Unit filename="/Users/igli/Desktop/Feather Repo/Feather/Feather/IComponentSet.h">
+			<Option target="Feather"/>
+		</Unit>
+		<Unit filename="/Users/igli/Desktop/Feather Repo/Feather/Feather/Pool.h">
+			<Option target="Feather"/>
+		</Unit>
+		<Unit filename="/Users/igli/Desktop/Feather Repo/Feather/Feather/System.cpp">
+			<Option target="Feather"/>
+		</Unit>
+		<Unit filename="/Users/igli/Desktop/Feather Repo/Feather/Feather/System.h">
+			<Option target="Feather"/>
+		</Unit>
+		<Unit filename="/Users/igli/Desktop/Feather Repo/Feather/Feather/SystemRegistry.cpp">
+			<Option target="Feather"/>
+		</Unit>
+		<Unit filename="/Users/igli/Desktop/Feather Repo/Feather/Feather/SystemRegistry.h">
+			<Option target="Feather"/>
+		</Unit>
+		<Unit filename="/Users/igli/Desktop/Feather Repo/Feather/Feather/Types.h">
+			<Option target="Feather"/>
+		</Unit>
+		<Unit filename="/Users/igli/Desktop/Feather Repo/Feather/Feather/World.cpp">
+			<Option target="Feather"/>
+		</Unit>
+		<Unit filename="/Users/igli/Desktop/Feather Repo/Feather/Feather/World.h">
+			<Option target="Feather"/>
+		</Unit>
+		<Unit filename="/Users/igli/Desktop/Feather Repo/Feather/main.cpp">
+			<Option target="Feather"/>
+		</Unit>
+		<Unit filename="/Users/igli/Desktop/Feather Repo/Feather/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

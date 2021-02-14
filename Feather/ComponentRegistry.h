@@ -11,7 +11,6 @@
 #include "ComponentSparseSet.h"
 
 
-
 ///"ComponentRegistry" Keeps track of all "ComponentArrays" and notifies them if an entity got removed from the world
 ///All the ComponentArrays pointers are stored in an array and the location of the arrays is their type ID.
 class ComponentRegistry
@@ -20,7 +19,7 @@ class ComponentRegistry
 public:
 
     template<typename T>
-    void AllocateComponentSet();
+    void AllocateComponentSet(int maxSize = MAX_ENTITIES);
 
     ///Finds an component array of Type "T" and updates it correctly with the new entity and component
     ///@param entity the entity which the component will be added to.
@@ -47,7 +46,8 @@ public:
     ///and if so update them accordingly
     void OnEntityDestroyed(Entity entity)
     {
-        for (auto &pair: m_componentSetsMap) {
+        for (auto &pair: m_componentSetsMap)
+        {
             pair.second->OnEntityDestroyed(entity);
         }
     }
@@ -56,30 +56,39 @@ public:
     template<typename T>
     ComponentSparseSet<T> *GetComponentSet();
 
+    void RemoveAllComponents()
+    {
+        for (auto &pair : m_componentSetsMap)
+        {
+            pair.second->Clear();
+        }
+    }
+
 private:
 
     ///All the component set pointers
     std::unordered_map<int, IComponentSet *> m_componentSetsMap;
 
 };
+
 template<typename T>
-void ComponentRegistry::AllocateComponentSet()
+void ComponentRegistry::AllocateComponentSet(int maxSize)
 {
     auto iterator = m_componentSetsMap.find(ComponentIDGenerator::index < T > );
 
-    if (iterator == m_componentSetsMap.end()) {
-        ComponentSparseSet<T> *array = new ComponentSparseSet<T>;
+    if (iterator == m_componentSetsMap.end())
+    {
+        ComponentSparseSet<T> *array = new ComponentSparseSet<T>(maxSize);
         m_componentSetsMap.insert(iterator, std::make_pair(ComponentIDGenerator::index < T > , array));
-    } else {
-       std::cout<<"Component is already registered.... Skipping"<<std::endl;
+    } else{
+        //ENGINE_LOG_WARNING("Component is already registered.... Skipping");
     }
 }
 
 template<typename T>
 ComponentSparseSet<T> *ComponentRegistry::GetComponentSet()
 {
-    //TODO add assertion here.
-    return static_cast<ComponentSparseSet<T> *>(m_componentSetsMap[ComponentIDGenerator::index < T >]);
+    return static_cast<ComponentSparseSet<T> *>(m_componentSetsMap[ComponentIDGenerator::index < T > ]);
 }
 
 template<typename T>

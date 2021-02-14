@@ -7,17 +7,10 @@
 
 #include <cstdlib>
 #include "Types.h"
-#include "../Debug/Debug.h"
 
 //Work in progress pool class
 //It stores a max nr of elements and pools them. It holds a reference to the holes of the packed array and fills them when it can.
 //It will iterate at complexity O(activeCount + holes) and the get complexity is O(1).
-
-//just an interface
-class IPool
-{
-
-};
 
 //TODO this works but, maybe find a better wey then allocating 3 arrays
 template<typename T>
@@ -36,24 +29,24 @@ public:
 
     T& GetNewData()
     {
-         size_t currentCount = count;
+        size_t currentCount = count;
 
-         count++;
+        count++;
 
-         if(m_validIndexesCount > 0)
-         {
-             if(m_emptyHoles>0) m_emptyHoles--;
+        if(m_validIndexesCount > 0)
+        {
+            if(m_emptyHoles>0) m_emptyHoles--;
 
-             int index = m_nextValidIndexes[m_validIndexesCount - 1 ];
-             m_validIndexesCount--;
-             m_activeFlags[index] = true;
-             return m_dataArray[index];
+            int index = m_nextValidIndexes[m_validIndexesCount - 1 ];
+            m_validIndexesCount--;
+            m_activeFlags[index] = true;
+            return m_dataArray[index];
 
-         } else
-         {
-             m_activeFlags[currentCount] = true;
-             return m_dataArray[currentCount];
-         }
+        } else
+        {
+            m_activeFlags[currentCount] = true;
+            return m_dataArray[currentCount];
+        }
 
     }
 
@@ -63,7 +56,7 @@ public:
 
         if(index <0 || index >= (count + m_emptyHoles))
         {
-            ENGINE_LOG_CRITICAL("Bad Pool Access!");
+            //ENGINE_LOG_CRITICAL("Bad Pool Access!");
             throw;
         }
 
@@ -83,7 +76,7 @@ public:
 
     void ForEach(typename std::common_type<std::function<void(T&)>>::type func)
     {
-        ENGINE_LOG(m_emptyHoles);
+        //ENGINE_LOG(m_emptyHoles);
         for (int i = 0; i < (count + m_emptyHoles); ++i)
         {
             if(m_activeFlags[i])

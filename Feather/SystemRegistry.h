@@ -9,7 +9,6 @@
 #include <typeinfo>
 #include "System.h"
 #include <unordered_map>
-#include <iostream>
 
 
 ///Holds a refence to all the systems.
@@ -19,23 +18,39 @@ class SystemRegistry {
 
 public:
 
-    ///Registers and creates a system of a certain type.
-    ///If the system is already registered a error will be thrown!
-    ///@return Returns a pointer to the created system.
-    template <typename T>
-    T* RegisterSystem()
+
+    template<typename T>
+    T* AllocateSystem()
     {
         std::size_t id = SystemIDGenerator::index<T>;
 
         if(m_systems.find(id) != m_systems.end())
         {
-            std::cout<<"System is already Registered"<<std::endl;
+            //ENGINE_LOG_CRITICAL("System is already allocated");
             throw;
         }
 
         T* system = new T();
+        system->OnCreate();
         m_systems.insert({id,system});
         return system;
+    }
+
+
+    template<typename T>
+    T* GetSystem()
+    {
+        std::size_t id = SystemIDGenerator::index<T>;
+
+        auto iterator = m_systems.find(id);
+
+        if(iterator == m_systems.end())
+        {
+           // ENGINE_LOG_CRITICAL("System is not allocated");
+            throw;
+        }
+
+        return static_cast<T*>(iterator->second);
     }
 
     ///Set the signature of a system
@@ -47,7 +62,7 @@ public:
 
         if(m_systems.find(id) == m_systems.end())
         {
-            std::cout<<"System is NOT Registered"<<std::endl;
+           // ENGINE_LOG_CRITICAL("System is NOT Registered");
             throw;
         }
 
@@ -67,7 +82,7 @@ public:
         }
     }
 
-    ///Called when the signature of an entity has changed.
+    ///Called when the signature of an entity Has changed.
     ///It checks if the new signature matches the signature of the system and if so it adds it to the set.
     ///@param entity Entity which signature changed
     ///@param signature The new EntitySignature
@@ -87,6 +102,14 @@ public:
             {
                 system->m_entities.erase(entity);
             }
+        }
+    }
+
+    void ResetAllSystems()
+    {
+        for (auto& systemPair : m_systems)
+        {
+            systemPair.second->m_entities.clear();
         }
     }
 

@@ -7,22 +7,22 @@
 
 #include <cstdio>
 #include <cstdlib>
-#include <iostream>
 #include "Types.h"
-#include <vector>
 #include "../EventQueue/EventQueue.h"
 #include "../Events/ComponentRemovedEvent.h"
 #include "IComponentSet.h"
+#include <vector>
 
 template <typename ComponentType>
 class ComponentSparseSet : public IComponentSet
 {
 public:
 
-    ComponentSparseSet()
+    ComponentSparseSet(int maxSize = MAX_ENTITIES)
     {
-        m_componentDenseArray =(ComponentType*)(calloc(MAX_ENTITIES,sizeof(ComponentType) ));
-        m_entitiesDenseArray = (Entity*)(calloc(MAX_ENTITIES,sizeof(Entity)));
+        m_maxSize = maxSize;
+        m_componentDenseArray =(ComponentType*)(calloc(maxSize,sizeof(ComponentType) ));
+        m_entitiesDenseArray = (Entity*)(calloc(maxSize,sizeof(Entity)));
         m_indexesSparseArray = (int*)(calloc(MAX_ENTITIES,sizeof(int)));
     }
 
@@ -34,7 +34,7 @@ public:
     {
         if(GetComponentIndex(entity) != -1)
         {
-            std::cout<<"Component Already Added"<<std::endl;
+            //ENGINE_LOG_CRITICAL("Component Already Added");
             throw;
         }
 
@@ -55,7 +55,7 @@ public:
     {
         if(GetComponentIndex(entity) == -1)
         {
-            std::cout<<"Component is not added to this entity"<<std::endl;
+            //ENGINE_LOG_CRITICAL("Component is not added to this entity");
             return;
         }
 
@@ -78,9 +78,10 @@ public:
 
     int GetComponentIndex(Entity entity)
     {
-        if(entity > MAX_ENTITIES)
+        if(m_indexesSparseArray[entity] > m_maxSize)
         {
-            return -1;
+            //ENGINE_LOG_CRITICAL("component set has exceeded the max size!");
+            throw;
         }
 
         //make sure we are in the sparse set
@@ -103,7 +104,7 @@ public:
 
         if(index == -1)
         {
-            std::cout<<"Component is not attached to this entity"<<std::endl;
+            //ENGINE_LOG_CRITICAL("Component is not attached to this entity");
             throw;
         }
         else
@@ -137,6 +138,19 @@ public:
         }
     }
 
+
+    ///Checks if the set contains an entity as an index to any of the components.
+    ///@return Returns true if the entity is used as an index to the array otherwise returns false
+    bool ContainsEntity(Entity entity)
+    {
+        return (GetComponentIndex(entity) != -1);
+    }
+
+    void Clear() override
+    {
+        validSize = 0;
+    }
+
     std::vector<Entity> GetEntities() override
     {
         std::vector<Entity> result{};
@@ -149,18 +163,6 @@ public:
         return result;
     }
 
-    ///Checks if the set contains an entity as an index to any of the components.
-    ///@return Returns true if the entity is used as an index to the array otherwise returns false
-    bool ContainsEntity(Entity entity)
-    {
-        return (GetComponentIndex(entity) != -1);
-    }
-
-    void Clear()
-    {
-        //TODO handle this
-    }
-
 private:
     //std::array<ComponentType,MAX_ENTITIES> m_componentDenseArray{};
     //std::array<Entity ,MAX_ENTITIES> m_entitiesDenseArray{} ;
@@ -169,6 +171,7 @@ private:
     ComponentType* m_componentDenseArray;
     Entity* m_entitiesDenseArray;
     int* m_indexesSparseArray;
+    int m_maxSize;
 };
 
 

@@ -88,5 +88,20 @@ CMakeFiles/Feather.dir/Feather/World.cpp.o: ../Feather/Types.h
 CMakeFiles/Feather.dir/Feather/World.cpp.o: ../Feather/World.cpp
 CMakeFiles/Feather.dir/Feather/World.cpp.o: ../Feather/World.h
 
+CMakeFiles/Feather.dir/main.cpp.o: ../EventQueue/Event.h
+CMakeFiles/Feather.dir/main.cpp.o: ../EventQueue/EventQueue.h
+CMakeFiles/Feather.dir/main.cpp.o: ../EventQueue/MemberFunctionHandler.h
+CMakeFiles/Feather.dir/main.cpp.o: ../Events/ComponentAddedEvent.h
+CMakeFiles/Feather.dir/main.cpp.o: ../Events/ComponentRemovedEvent.h
+CMakeFiles/Feather.dir/main.cpp.o: ../Feather/ComponentRegistry.h
+CMakeFiles/Feather.dir/main.cpp.o: ../Feather/ComponentSparseSet.h
+CMakeFiles/Feather.dir/main.cpp.o: ../Feather/CustomTypeID.h
+CMakeFiles/Feather.dir/main.cpp.o: ../Feather/EntityHandle.h
+CMakeFiles/Feather.dir/main.cpp.o: ../Feather/EntityRegistry.h
+CMakeFiles/Feather.dir/main.cpp.o: ../Feather/IComponentSet.h
+CMakeFiles/Feather.dir/main.cpp.o: ../Feather/System.h
+CMakeFiles/Feather.dir/main.cpp.o: ../Feather/SystemRegistry.h
+CMakeFiles/Feather.dir/main.cpp.o: ../Feather/Types.h
+CMakeFiles/Feather.dir/main.cpp.o: ../Feather/World.h
 CMakeFiles/Feather.dir/main.cpp.o: ../main.cpp
 

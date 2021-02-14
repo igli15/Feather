@@ -46,7 +46,7 @@ public:
 
     ///Subscribes to an event by providing the method callback that will be thrown.
     ///e.g if class "Foo" is listening for a event "TestEvent" and wants to have a callback "Foo::Callback()".
-    ///The callback has to have the event type as a parameter so it should be "Foo::Callback(TestEvent* event)".
+    ///The callback Has to have the event type as a parameter so it should be "Foo::Callback(TestEvent* event)".
     ///Then subscribing is EventQueue.Subscribe(FooInstance,Foo::Callback);
     template<class T, class EventType>
     void Subscribe(T * instance, void (T::*memberFunction)(EventType *))

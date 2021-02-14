@@ -5,25 +5,26 @@
 #include "World.h"
 #include "EntityHandle.h"
 #include "../Events/EntityEvents.h"
+#include "System.h"
 
 void World::Init(SystemRegistry* systemRegistry,EntityRegistry* entityRegistry,ComponentRegistry* componentRegistry)
 {
-    m_componentManager = componentRegistry;
-    m_entityManager = entityRegistry;
-    m_systemManager = systemRegistry;
+    m_componentRegistry = componentRegistry;
+    m_entityRegistry = entityRegistry;
+    m_systemRegistry = systemRegistry;
 
 }
 
 EntityHandle World::CreateEntity()
 {
-    return {m_entityManager->CreateEntity(),this};
+    return {m_entityRegistry->CreateEntity(), this};
 }
 
 void World::InternalDestroyEntity(Entity entity)
 {
-    m_entityManager->DestroyEntity(entity);
-    m_componentManager->OnEntityDestroyed(entity);
-    m_systemManager->OnEntityDestroyed(entity);
+    m_entityRegistry->DestroyEntity(entity);
+    m_componentRegistry->OnEntityDestroyed(entity);
+    m_systemRegistry->OnEntityDestroyed(entity);
 }
 
 void World::InitAllSystems()
@@ -38,7 +39,9 @@ void World::UpdateAllSystems(float dt)
 {
     for (int i = 0; i < m_allRegisteredSystems.size(); ++i)
     {
-        m_allRegisteredSystems[i]->Update(dt);
+        System* system = m_allRegisteredSystems[i];
+
+        if(system->enabled) system->Update(dt);
     }
 }
 
@@ -46,7 +49,9 @@ void World::RenderAllSystems()
 {
     for (int i = 0; i < m_allRegisteredSystems.size(); ++i)
     {
-        m_allRegisteredSystems[i]->Render();
+        System* system = m_allRegisteredSystems[i];
+
+        if(system->enabled) system->Render();
     }
 }
 
@@ -62,7 +67,7 @@ void World::DestroyEntity(Entity entity)
     EventQueue::Instance().Publish(new OnEntityDestroyedEvent(entity));
 }
 
-void World::ClearEntityGarbage() 
+void World::ClearEntityGarbage()
 {
     for (int i = m_entityGarbage.size() - 1; i >= 0; i--)
     {
@@ -76,8 +81,21 @@ void World::PreRenderAllSystems()
 {
     for (int i = 0; i < m_allRegisteredSystems.size(); ++i)
     {
-        m_allRegisteredSystems[i]->PreRender();
+        System* system = m_allRegisteredSystems[i];
+
+        if(system->enabled) system->PreRender();
     }
+}
+
+void World::ResetWorld()
+{
+    m_entityRegistry->ReturnAllEntities();
+    m_allRegisteredSystems.clear();
+    m_systemRegistry->ResetAllSystems();
+    m_componentRegistry->RemoveAllComponents();
+
+    Build();
+    InitAllSystems();
 }
 
 

@@ -19,6 +19,8 @@ public:
     ///Returns a std::vector of all entities that the components in the array are attached to.
     virtual std::vector<Entity> GetEntities() = 0;
 
+    virtual void Clear() = 0;
+
     ///The active component count.
     size_t validSize = 0;
 };

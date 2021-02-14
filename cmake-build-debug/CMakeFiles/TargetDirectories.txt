@@ -1,3 +1,3 @@
-/Users/igli/Desktop/Feather Repo/Feather/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/igli/Desktop/Feather Repo/Feather/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/igli/Desktop/Feather Repo/Feather/cmake-build-debug/CMakeFiles/Feather.dir
+/Users/igli/Documents/Minor Skilled /Feather Repo/Feather/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/igli/Documents/Minor Skilled /Feather Repo/Feather/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/igli/Documents/Minor Skilled /Feather Repo/Feather/cmake-build-debug/CMakeFiles/Feather.dir

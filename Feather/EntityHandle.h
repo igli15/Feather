@@ -45,6 +45,11 @@ struct EntityHandle {
         return world->GetComponentPtr<T>(entity);
     }
 
+    void Destroy()
+    {
+        world->DestroyEntity(entity);
+    }
+
     EntityHandle& operator=(const EntityHandle& other)
     {
         entity = other.entity;

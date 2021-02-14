@@ -40,3 +40,15 @@ EntitySignature EntityRegistry::GetSignature(Entity e)
     return m_signatures[e];
 }
 
+void EntityRegistry::ReturnAllEntities()
+{
+    for (int i = 1; i < m_activeEntities; ++i)
+    {
+        m_signatures[i].reset();
+        m_entityQueue.push(i);
+    }
+
+
+    m_activeEntities = 0;
+}
+

@@ -1,0 +1,3 @@
+C:/Users/Igli/Desktop/FeatherRepo/_vsFiles/CMakeFiles/Feather.dir
+C:/Users/Igli/Desktop/FeatherRepo/_vsFiles/CMakeFiles/ALL_BUILD.dir
+C:/Users/Igli/Desktop/FeatherRepo/_vsFiles/CMakeFiles/ZERO_CHECK.dir

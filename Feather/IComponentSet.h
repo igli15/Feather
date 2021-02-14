@@ -2,8 +2,11 @@
 // Created by Igli milaqi on 25/05/2020.
 //
 
+
 #ifndef CROW_ICOMPONENTSET_H
 #define CROW_ICOMPONENTSET_H
+
+#include <vector>
 
 ///This is the base class of all ComponentSets.
 ///It is here so that the ComponentRegistry stores a reference to all ComponentArrays and some abstract method implementations.

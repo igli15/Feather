@@ -1,0 +1,10 @@
+^C:\USERS\IGLI\DESKTOP\FEATHERREPO\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Igli/Desktop/FeatherRepo -BC:/Users/Igli/Desktop/FeatherRepo/_vsFiles --check-stamp-file C:/Users/Igli/Desktop/FeatherRepo/_vsFiles/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

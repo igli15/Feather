@@ -30,6 +30,7 @@ class GravitySystem : public System
 
         for (Entity e : entities)
         {
+			std::cout << "destroying Entity"<< std::endl;
             world->DestroyEntity(e);
         }
     }

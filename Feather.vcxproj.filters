@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="EventQueue">
+      <UniqueIdentifier>{8C3AF45B-78F2-35A9-E1F9-0E05CDD0D099}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Events">
+      <UniqueIdentifier>{3A8963B1-262B-8E87-0FE6-A1DBFB2615D8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Feather">
+      <UniqueIdentifier>{64EEE102-D0CD-609E-D9E5-EB744544C7FF}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\EventQueue\Event.h">
+      <Filter>EventQueue</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EventQueue\EventQueue.h">
+      <Filter>EventQueue</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EventQueue\MemberFunctionHandler.h">
+      <Filter>EventQueue</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Events\ComponentAddedEvent.h">
+      <Filter>Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Events\ComponentRemovedEvent.h">
+      <Filter>Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Events\EntityEvents.h">
+      <Filter>Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Feather\Benchmark.h">
+      <Filter>Feather</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Feather\ComponentRegistry.h">
+      <Filter>Feather</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Feather\ComponentSparseSet.h">
+      <Filter>Feather</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Feather\CustomTypeID.h">
+      <Filter>Feather</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Feather\EntityHandle.h">
+      <Filter>Feather</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Feather\EntityRegistry.h">
+      <Filter>Feather</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Feather\IComponentSet.h">
+      <Filter>Feather</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Feather\Pool.h">
+      <Filter>Feather</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Feather\System.h">
+      <Filter>Feather</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Feather\SystemRegistry.h">
+      <Filter>Feather</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Feather\Types.h">
+      <Filter>Feather</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Feather\World.h">
+      <Filter>Feather</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\EventQueue\EventQueue.cpp">
+      <Filter>EventQueue</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EventQueue\MemberFunctionHandler.cpp">
+      <Filter>EventQueue</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Events\ComponentAddedEvent.cpp">
+      <Filter>Events</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Feather\ComponentRegistry.cpp">
+      <Filter>Feather</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Feather\ComponentSparseSet.cpp">
+      <Filter>Feather</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Feather\EntityHandle.cpp">
+      <Filter>Feather</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Feather\EntityRegistry.cpp">
+      <Filter>Feather</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Feather\System.cpp">
+      <Filter>Feather</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Feather\SystemRegistry.cpp">
+      <Filter>Feather</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Feather\World.cpp">
+      <Filter>Feather</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp" />
+  </ItemGroup>
+</Project>

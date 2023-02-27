@@ -30,3 +30,10 @@
 *.exe
 *.out
 *.app
+
+*bin/
+*bin-int/
+*obj/
+*.sln
+*.vcxproj
+*.vcxproj.filters

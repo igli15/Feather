@@ -4,7 +4,8 @@ project "Feather"
 
 	kind "StaticLib"
 	language "C++"
-
+	staticruntime "On"
+	
 	targetdir ("bin/" .. outputDir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputDir .. "/%{prj.name}")
 
@@ -28,7 +29,6 @@ project "Feather"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
 		systemversion "latest"
 
 	filter "configurations:Debug"

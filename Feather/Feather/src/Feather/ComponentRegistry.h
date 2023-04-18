@@ -25,8 +25,8 @@ public:
     ///@param entity the entity which the component will be added to.
     ///@param component the component that's going to be added.
     ///@return a pointer to the added component
-    template<typename T>
-    T *AddComponent(Entity entity, T component);
+    template <typename T, typename... Args>
+    T* AddComponent(Entity entity, Args&&... args);
 
     template<typename T>
     void RemoveComponent(Entity entity);
@@ -91,10 +91,10 @@ ComponentSparseSet<T> *ComponentRegistry::GetComponentSet()
     return static_cast<ComponentSparseSet<T> *>(m_componentSetsMap[ComponentIDGenerator::index < T > ]);
 }
 
-template<typename T>
-T *ComponentRegistry::AddComponent(Entity entity, T component)
+template<typename T, typename ...Args>
+inline T* ComponentRegistry::AddComponent(Entity entity, Args && ...args)
 {
-    return GetComponentSet<T>()->AddComponentData(entity, component);
+    return GetComponentSet<T>()->AddComponentData(entity, std::forward<Args>(args)...);
 }
 
 template<typename T>

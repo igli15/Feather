@@ -58,17 +58,17 @@ public:
     ///@param entity Entity which the component will be added to.
     ///@param component The component which is going to be added.
     ///@return Returns a pointer the the component.
-    template <typename T>
-    T* AddComponent(Entity entity,T component)
+    template <typename T,typename... Args>
+    T* AddComponent(Entity entity,Args&&... args)
     {
-        T* c = m_componentRegistry->AddComponent(entity, component);
+        T* c = m_componentRegistry->AddComponent<T,Args...>(entity, std::forward<Args>(args)...);
         EntitySignature signature = m_entityRegistry->GetSignature(entity);
-        signature.set(ComponentIDGenerator::index<T>,true);
+        signature.set(ComponentIDGenerator::index<T>, true);
         m_entityRegistry->SetSignature(entity, signature);
 
         m_systemRegistry->OnEntitySignatureChanged(entity, signature);
 
-        EventQueue::Instance().Publish(new ComponentAddedEvent<T>(entity,c));
+        EventQueue::Instance().Publish(new ComponentAddedEvent<T>(entity, c));
 
         return c;
     }

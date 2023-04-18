@@ -26,13 +26,10 @@ public:
         m_indexesSparseArray = (int*)(calloc(MAX_ENTITIES,sizeof(int)));
     }
 
-    ///Adds a component to the specified entity.
-    ///@param entity The entity which the component will be added to.
-    ///@param Component The component which will be stored on the array.
-    ///@return A pointer to the component which was just added.
-    ComponentType* AddComponentData(Entity entity,ComponentType componentData)
+    template<typename... Args>
+    ComponentType* AddComponentData(Entity entity,Args&&... args)
     {
-        if(GetComponentIndex(entity) != -1)
+        if (GetComponentIndex(entity) != -1)
         {
             //ENGINE_LOG_CRITICAL("Component Already Added");
             throw;
@@ -40,7 +37,7 @@ public:
 
         size_t index = validSize;
 
-        m_componentDenseArray[index] = componentData;
+        m_componentDenseArray[index] = std::move(ComponentType{ std::forward<Args>(args)...});
         m_entitiesDenseArray[index] = entity;
         m_indexesSparseArray[entity] = index;
 

@@ -18,10 +18,10 @@ struct EntityHandle {
 
     ///Adds a component of a certain type to the entity.
     ///@param component The component which is going to be added.
-    template <typename T>
-    T* AddComponent(T component)
+    template <typename T, typename... Args>
+    T* AddComponent(Args&&... args)
     {
-        return world->AddComponent(entity, component);
+        return world->AddComponent<T,Args...>(entity, std::forward<Args>(args)...);
     }
 
     ///Removes a component of a certain type to the entity.

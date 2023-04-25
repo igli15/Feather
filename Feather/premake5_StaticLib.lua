@@ -1,7 +1,6 @@
 project "Feather"
 
-	location "Feather"
-
+	location("../../" .. buildFilesLocation)
 	kind "StaticLib"
 	language "C++"
 	staticruntime "On"

@@ -3,6 +3,7 @@ project "Feather"
 	location("../../" .. buildFilesLocation)
 	kind "StaticLib"
 	language "C++"
+	cppdialect "C++17"
 	staticruntime "On"
 	
 	targetdir ("bin/" .. outputDir .. "/%{prj.name}")

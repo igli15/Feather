@@ -37,3 +37,4 @@
 *.sln
 *.vcxproj
 *.vcxproj.filters
+PREMAKE_GENERATED_FILES/**

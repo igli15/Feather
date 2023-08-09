@@ -1,4 +1,7 @@
 workspace "Feather"
+
+	location("PREMAKE_GENERATED_FILES/")
+	
 	architecture "x64"
 	startproject "Feather"
 	configurations
@@ -12,7 +15,7 @@ workspace "Feather"
 
 project "Feather"
 
-	location "Feather"
+	location("PREMAKE_GENERATED_FILES/")
 
 	kind "ConsoleApp"
 	language "C++"
@@ -22,32 +25,31 @@ project "Feather"
 
 	files
 	{
-		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp",
-		"%{prj.name}/src/**.hpp",
-		"%{prj.name}/src/**.c"
+		"src/**.h",
+		"src/**.cpp",
+		"src/**.hpp",
+		"src/**.c"
 	}
 
 	includedirs
 	{
-		"%{prj.name}/src",
+		"src",
 	}
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
 		systemversion "latest"
 
 	filter "configurations:Debug"
-		defines "CR_DEBUG"
+		defines "DEBUG"
 		symbols "On"
 
 
 	filter "configurations:Release"
-		defines "CR_RELEASE"
+		defines "RELEASE"
 		optimize "On"
 
 
 	filter "configurations:Dist"
-		defines "CR_DIST"
+		defines "DIST"
 		optimize "On"

@@ -14,8 +14,6 @@ project "Feather"
 
 	location "Feather"
 
-	--in case we want to make a dll user "Shared lib" instead of "ConsoleApp"
-	--kind "SharedLib"
 	kind "ConsoleApp"
 	language "C++"
 

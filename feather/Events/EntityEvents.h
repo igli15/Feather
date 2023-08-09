@@ -6,8 +6,8 @@
 #define CROW_ENTITYEVENTES_H
 
 
-#include "../EventQueue/Event.h"
-#include "../Feather/Types.h"
+#include "EventQueue/Event.h"
+#include "Types.h"
 
 class OnEntityDestroyedEvent : public Event {
 

@@ -8,8 +8,8 @@
 #include <cstdio>
 #include <cstdlib>
 #include "Types.h"
-#include "../EventQueue/EventQueue.h"
-#include "../Events/ComponentRemovedEvent.h"
+#include "EventQueue/EventQueue.h"
+#include "Events/ComponentRemovedEvent.h"
 #include "IComponentSet.h"
 #include <vector>
 

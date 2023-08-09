@@ -25,15 +25,15 @@ project "Feather"
 
 	files
 	{
-		"src/**.h",
-		"src/**.cpp",
-		"src/**.hpp",
-		"src/**.c"
+		"feather/**.h",
+		"feather/**.cpp",
+		"feather/**.hpp",
+		"feather/**.c"
 	}
 
 	includedirs
 	{
-		"src",
+		"feather/",
 	}
 
 	filter "system:windows"

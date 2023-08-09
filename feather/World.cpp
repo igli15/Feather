@@ -4,7 +4,7 @@
 
 #include "World.h"
 #include "EntityHandle.h"
-#include "../Events/EntityEvents.h"
+#include "Events/EntityEvents.h"
 #include "System.h"
 
 void World::Init(SystemRegistry* systemRegistry,EntityRegistry* entityRegistry,ComponentRegistry* componentRegistry)

@@ -1,8 +1,9 @@
 //
 // Created by Igli milaqi on 30/05/2020.
 //
-#include "Feather/World.h"
-#include "Feather/EntityHandle.h"
+#include "World.h"
+#include "EntityHandle.h"
+
 #include <iostream>
 
 struct Position

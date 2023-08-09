@@ -7,7 +7,7 @@
 
 
 #include "../EventQueue/Event.h"
-#include "../Feather/Types.h"
+#include "../Types.h"
 
 template <typename T>
 class ComponentRemovedEvent : public Event {
